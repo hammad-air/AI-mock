@@ -1,4 +1,4 @@
-import { pgTable, serial, text, varchar,timestamp} from "drizzle-orm/pg-core";
+import { pgTable, serial, text, varchar,timestamp,integer} from "drizzle-orm/pg-core";
 
 export const MockInterview=pgTable('MockInterview',{
     id:serial('id').primaryKey(),
@@ -8,7 +8,8 @@ export const MockInterview=pgTable('MockInterview',{
     jobExperience:varchar('jobExperience').notNull(),
     createdBy:varchar('createdBy').notNull(),
     createdAt:varchar('createdAt'),
-    mockId:varchar('mockId').notNull()
+    mockId:varchar('mockId').notNull(),
+    overallRating: integer("overallRating").default(0) // New column
 })
 
 export const UserAnswer = pgTable('userAnswer',{
@@ -31,5 +32,6 @@ export const BadgesData = pgTable('BadgesData', {
     id: serial('id').primaryKey(),  // Unique ID for each badge entry
     userEmail: varchar('userEmail').notNull(),  // User's email
     badgeName: varchar('badgeName').notNull(),  // Name of the awarded badge
-    awardedAt: timestamp('awardedAt').defaultNow().notNull()  // Timestamp when awarded
+    awardedAt: timestamp('awardedAt').defaultNow().notNull() , // Timestamp when awarded
+    userName: varchar('userName').notNull(),
 });

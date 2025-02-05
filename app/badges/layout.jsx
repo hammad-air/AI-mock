@@ -6,8 +6,14 @@ function DashboardLayout({ children }) {
   return (
     <div>
       <Header /> 
-     {/* <Sidebar/> */}
-      <div className="mx-5 md:mx-20 lg:,mx:36">{children}</div>
+
+    <div className="">
+      <div className=" flex">
+      <Sidebar/>
+        {children}
+        </div>
+
+        </div>
     </div>
   );
 }

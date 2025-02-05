@@ -8,6 +8,13 @@
       "when": 1738598628755,
       "tag": "0000_freezing_mole_man",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738730969700,
+      "tag": "0001_panoramic_namor",
+      "breakpoints": true
     }
   ]
 }

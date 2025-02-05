@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/dashboard/interview/[interviewId]/feedback/page.jsx", "app/badges/page.jsx", "components/Sidebar.jsx", "components/ui/sheet.tsx"  ],
+, "app/dashboard/interview/[interviewId]/feedback/page.jsx", "app/badges/[userid]/page.jsx", "components/Sidebar.jsx", "components/ui/sheet.jsx", "app/badges/[userid]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
