@@ -56,6 +56,17 @@ export const Header = () => {
             Job Portal
           </li>
         </a>
+
+        <a className="gap-6" href="https://career.internee.pk/">
+          {" "}
+          <li
+            className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path == "/dashboard/how" && "text-primary font-bold"
+              }`}
+          >
+            {" "}
+            Job Portal
+          </li>
+        </a>
       </ul>
       <UserButton />
     </div>

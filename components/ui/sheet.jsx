@@ -22,7 +22,7 @@ export default function Sheet({ children, open, onClose, position = "right" }) {
   return (
     <AnimatePresence>
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center ">
           <motion.div
             className="fixed inset-0 bg-black bg-opacity-50"
             initial={{ opacity: 0 }}

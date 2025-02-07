@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
     try {
-        const { userEmail, badgeName } = await req.json();
+        const { userEmail, badgeName, userName  } = await req.json();
 
         if (!userEmail || !badgeName) {
             return NextResponse.json({ message: "Missing userEmail or badgeName" }, { status: 400 });
@@ -13,6 +13,7 @@ export async function POST(req) {
         await db.insert(BadgesData).values({
             userEmail,
             badgeName,
+            userName,
             awardedAt: new Date(),
         });
         console.log("Adedd BageDAta Succesfull  -- api/checkawardbadge   lin:13")

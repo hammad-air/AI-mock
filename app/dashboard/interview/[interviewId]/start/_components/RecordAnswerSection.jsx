@@ -12,14 +12,24 @@ import { UserAnswer } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 
+
+import { Lightbulb, WebcamIcon } from "lucide-react";
+
 const RecordAnswerSection = ({
   mockInterviewQuestion,
   activeQuestionIndex,
   interviewData,
 }) => {
+
+
+
+
+
+
   const [userAnswer, setUserAnswer] = useState("");
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
+    const [webCamEnabled, setWebCamEnabled] = useState(true);
   const {
     error,
     interimResult,
@@ -110,15 +120,26 @@ const RecordAnswerSection = ({
   if (error) return <p>Web Speech API is not available in this browser 🤷‍</p>;
   return (
     <div className="flex justify-cente items-center flex-col">
-      <div className="flex flex-col my-20 justify-center items-center bg-black rounded-lg p-5">
-        <Image
-          src={"/webcam.png"}
-          width={200}
-          height={200}
-          className="absolute"
-          alt="webcam"
-          priority
-        />
+      <div className="flex flex-col my-20 justify-center items-center bg-black rounded-lg w-full ">
+      {webCamEnabled ? (
+            <Webcam
+              onUserMedia={() => setWebCamEnabled(true)}
+              onUserMediaError={() => setWebCamEnabled(false)}
+              mirrored={true}
+              style={{ height: 300, width: 400 }}
+            />
+          ) : (
+            <>
+              <WebcamIcon className="h-72  my-7 border rounded-lg w-full  bg-secondary" />
+              <Button
+                className="w-full"
+                variant="ghost"
+                onClick={() => setWebCamEnabled(true)}
+              >
+                Enable Web Cam and Microphone
+              </Button>
+            </>
+          )}
         {/* <Webcam
           style={{ height: 300, width: "100%", zIndex: 10 }}
           mirrored={true}

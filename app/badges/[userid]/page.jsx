@@ -8,6 +8,8 @@ import { getUserBadges } from "@/app/badges/actions/actions";
 import useSWR from "swr";
 import { HomeIcon } from "lucide-react";
 
+import ShareButton from "@/app/badges/_components/ShareButton";
+
 // Fetcher function for SWR (handles fetching user badges)
 const fetchBadges = async (userid) => {
   if (!userid) return [];
@@ -31,9 +33,10 @@ const BadgeList = ({ params }) => {
 
   return (
     
-    <div className="p-6">
+    <div className="p-6 w-full">
       {/* Breadcrumbs for navigation */}
-      <nav className="mb-4 text-gray-600 text-sm flex items-center space-x-2">
+      <div className="flex justify-between w-full items-center">
+      <nav className="mb-4 text-gray-600 text-sm flex items-center space-x-2 w-2xl">
         <Link href="/" className="flex items-center hover:text-blue-500">
           <HomeIcon size={16} className="mr-1" /> Home
         </Link>
@@ -43,7 +46,16 @@ const BadgeList = ({ params }) => {
           <span>/</span>
           <span className="text-gray-800 font-semibold">{badgeList[0].userName}</span>
         </>}
+
+        
       </nav>
+      <div className="flex justify-start mb-6">
+  <ShareButton text={window.location.href} />
+</div>
+     
+      </div>
+
+     
 
 
 

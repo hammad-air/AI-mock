@@ -2,20 +2,19 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 
-const badgeDictionary = {
-  "topper": {
-    icon: "/toperankerbadge.png",
-    description: "Awarded for mastering coding challenges."
-  },
-  "ranker": {
-    icon: "/toperankerbadge.png",
-    description: "Recognized for finding and fixing critical bugs."
-  },
-  "Innovator": {
-    icon: "https://example.com/innovator.png",
-    description: "Given to those who create unique solutions."
-  }
-};
+import badgeDictionary from "@/lib/badgeDictionary"
+
+// const badgeDictionary = {
+  
+//   "Silver Badge": {
+//     icon: "/silverbadge.png",
+//     description: "Awarded for a rating > 4, this badge highlights your strong coding skills, solid problem-solving abilities, and clear understanding of core concepts. Keep up the great work—you’re on the path to excellence!"
+//   },
+//   "Golden Badge": {
+//     icon: "/Goldenbadge.png",
+//     description: "Awarded for a rating > 7, this badge recognizes your outstanding problem-solving skills, clean code, and deep understanding of algorithms. You’ve proven yourself as a top-tier coder—wear it with pride!"
+//   }
+// };
 
 // Skeleton loader for badge item
 const SkeletonBadgeItemCard = () => (
